@@ -479,12 +479,6 @@ button,.button,a.button{
 	outline:none;
 	background:#fafafa
 }
-@media (prefers-color-scheme: dark){
-	button,.button,a.button{
-		background:#1b1c1d;
-		color:inherit
-}
-}
 @media (prefers-color-scheme: light){
 	button,.button,a.button{
 		background:#fafafa
@@ -502,12 +496,6 @@ button.outline,.button.outline,a.button.outline{
 	box-shadow:none;
 	padding:8px 18px;
 	border-color:#eaeaea
-}
-@media (prefers-color-scheme: dark){
-	button.outline,.button.outline,a.button.outline{
-		border-color:#3b3d42;
-		color:inherit
-}
 }
 @media (prefers-color-scheme: light){
 	button.outline,.button.outline,a.button.outline{
@@ -563,12 +551,6 @@ button.wide,.button.wide,a.button.wide{
 	outline:none;
 	background:#eaeaea
 }
-@media (prefers-color-scheme: dark){
-	.code-toolbar .toolbar-item a{
-		background:#3b3d42;
-		color:inherit
-}
-}
 @media (prefers-color-scheme: light){
 	.code-toolbar .toolbar-item a{
 		background:#eaeaea
@@ -588,11 +570,6 @@ button.wide,.button.wide,a.button.wide{
 	position:relative;
 	padding:20px;
 	background:#fafafa
-}
-@media (prefers-color-scheme: dark){
-	.header{
-		background:#1b1c1d
-}
 }
 @media (prefers-color-scheme: light){
 	.header{
@@ -734,11 +711,6 @@ button.wide,.button.wide,a.button.wide{
 	z-index:9999;
 	background:#fafafa
 }
-@media (prefers-color-scheme: dark){
-	.menu{
-		background:#1b1c1d
-}
-}
 @media (prefers-color-scheme: light){
 	.menu{
 		background:#fafafa
@@ -838,12 +810,6 @@ body{
 @media (max-width: 684px){
 	body{
 		font-size:1rem
-}
-}
-@media (prefers-color-scheme: dark){
-	body{
-		background-color:#232425;
-		color:#a9a9b3
 }
 }
 @media (prefers-color-scheme: light){
@@ -963,11 +929,6 @@ figure figcaption.right{
 em,i,strong{
 	color:black
 }
-@media (prefers-color-scheme: dark){
-	em,i,strong{
-		color:white
-}
-}
 @media (prefers-color-scheme: light){
 	em,i,strong{
 		color:black
@@ -988,11 +949,6 @@ code{
 	border-radius:5px;
 	font-size:0.95rem;
 	background:#eaeaea
-}
-@media (prefers-color-scheme: dark){
-	code{
-		background:#3b3d42
-}
 }
 @media (prefers-color-scheme: light){
 	code{
@@ -1024,11 +980,6 @@ pre code{
 	padding:0;
 	font-size:inherit;
 	color:#ccc
-}
-@media (prefers-color-scheme: dark){
-	pre code{
-		color:inherit
-}
 }
 @media (prefers-color-scheme: light){
 	pre code{
@@ -1104,11 +1055,6 @@ hr{
 	border:none;
 	height:1px;
 	background:#dcdcdc
-}
-@media (prefers-color-scheme: dark){
-	hr{
-		background:#4e4e57
-}
 }
 @media (prefers-color-scheme: light){
 	hr{
@@ -1189,11 +1135,6 @@ hr{
 }
 .posts:not(:last-of-type){
 	border-bottom:1px solid #dcdcdc
-}
-@media (prefers-color-scheme: dark){
-	.posts:not(:last-of-type){
-		border-bottom:1px solid #4e4e57
-}
 }
 @media (prefers-color-scheme: light){
 	.posts:not(:last-of-type){
@@ -1368,12 +1309,6 @@ hr{
 	background:#fff;
 	color:#999
 }
-@media (prefers-color-scheme: dark){
-	.pagination__title-h{
-		background:#232425;
-		color:#b3b3bd
-}
-}
 @media (prefers-color-scheme: light){
 	.pagination__title-h{
 		background:#fff;
@@ -1418,11 +1353,6 @@ hr{
 	cursor:pointer;
 	appearance:none;
 	background:#eaeaea
-}
-@media (prefers-color-scheme: dark){
-	.button{
-		background:#3b3d42
-}
 }
 @media (prefers-color-scheme: light){
 	.button{
@@ -1545,11 +1475,6 @@ hr{
 	padding:12px 15px;
 	border:1px solid #dcdcdc
 }
-@media (prefers-color-scheme: dark){
-	.post-content table th,.post-content table td{
-		border:1px solid #4e4e57
-}
-}
 @media (prefers-color-scheme: light){
 	.post-content table th,.post-content table td{
 		border:1px solid #dcdcdc
@@ -1565,12 +1490,6 @@ hr{
 	text-align:left;
 	background-color:#dcdcdc;
 	color:#222
-}
-@media (prefers-color-scheme: dark){
-	.post-content table thead tr{
-		background-color:#4e4e57;
-		color:#a9a9b3
-}
 }
 @media (prefers-color-scheme: light){
 	.post-content table thead tr{
@@ -1588,11 +1507,6 @@ hr{
 }
 .post-content table tbody tr{
 	border:1px solid #dcdcdc
-}
-@media (prefers-color-scheme: dark){
-	.post-content table tbody tr{
-		border:1px solid #4e4e57
-}
 }
 @media (prefers-color-scheme: light){
 	.post-content table tbody tr{
