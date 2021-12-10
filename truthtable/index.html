@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Truth-Table Generator</title>
+</head> 
+
+<body>
+    <div class="header">
+        <h1>Truth Table Generator</h1>
+        <p>By: Mohamed Ismail</p>
+      </div>
+
+
+    <div class="container">
+        <div class="input">Formula: <input id="Formula" type="text"></div>
+        <button id="button" class="Button">Calculate</button>
+        <p id="alertMessage"></p>
+
+    <table id="truthTable" class="TT">
+    </table>
+</div>
+
+    <div class="Info">
+        <table id="infoTable" class="Info">
+            <thead>
+            <tr>
+                <td>Operator</td>
+                <td>What to Type:</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>∧ (AND)</td>
+                <td>^, ∧, &</td>
+            </tr>
+            <tr>
+                <td>∨ (OR)</td>
+                <td>|, ∨</td>
+            </tr>
+            <tr>
+                <td> → (CONDITIONAL)</td>
+                <td>→, ></td>
+            </tr>
+            <tr>
+                <td>↔ (BICONDITIONAL)</td>
+                <td>↔, =, ≡ </td>
+            </tr>
+            <tr>
+                <td>⊕ (XOR/EXCLUSIVE)</td>
+                <td>⊕</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    
+
+    <script src="js/index.js"></script>
+    <script src="js/truthTable.js"></script>
+
+</body>
+</html>
