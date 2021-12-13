@@ -71,8 +71,10 @@ function printTable(x, constant, value) {
 }
 
 function solve(formula, expression, constant) {
+    console.log(formula);
 
     if (formula.length === 1) {
+        console.log(formula);
         convertArray(oldResultArray);
         convertArray(resultArray);
         oldResultArray.push("-");
@@ -103,7 +105,9 @@ function solve(formula, expression, constant) {
             }
         }
     }
+    console.log(rowArray);
     convertArray(rowArray);
+    console.log(rowArray);
     solveArray(rowArray, expression, constant);
     return;
 }

@@ -18,7 +18,7 @@ function parseInput() {
 
     let parsedFormula = removeSpace.toLowerCase();
 
-    var allowedChars = /[A-Za-z|^()↔>⊕=→∧&∨≡]/;
+    var allowedChars = /[A-Za-z|^()↔>⊕=→∧&∨≡#]/;
 
     var i;
 
@@ -42,7 +42,7 @@ function checkFormula(formula) {
     var makedExpression;
     var index;
     var newFormula;
-    var expressionAllowed = /[|^↔>⊕=→∧&∨≡]/;
+    var expressionAllowed = /[|^↔>⊕=→∧&∨≡#]/;
 
     oldFormula = formula;
 
@@ -73,11 +73,18 @@ function checkFormula(formula) {
     makeConstantTable(constants, oldFormula);
 
     for (var k = 0; k < formula.length + 1; k++) {
-        if (formula[0] == "(" && !expressionAllowed.test(formula[1])) {
+        if (formula[0] == "(" && !expressionAllowed.test(formula[1]) && formula[formula.length-1] == ")") {
             index = formula.findIndex(formula => formula == ")");
             newFormula = formula.slice(i + 1, index);
+            console.log(newFormula);
             formula = formula.slice(index + 1, formula.length - 1);
             makedExpression = makeExpression(newFormula);
+        } else  if (formula[0] == "(" && !expressionAllowed.test(formula[1])) {
+                index = formula.findIndex(formula => formula == ")");
+                newFormula = formula.slice(i + 1, index);
+                console.log(newFormula);
+                formula = formula.slice(index + 1, formula.length);
+                makedExpression = makeExpression(newFormula);
         } else if (expressionAllowed.test(formula[0]) && formula[1] == "(" && formula[0] === "^") {
             newFormula = formula.slice(0, 3);
             formula = formula.slice(3, formula.length);
@@ -132,6 +139,8 @@ function checkFormula(formula) {
 
 function makeExpression(formula) {
 
+    console.log(formula);
+
     if (formula.length < 3) {
         if (allowed.test(formula[0])) {
             alertMessage.innerHTML = '';
@@ -175,7 +184,7 @@ function removeDuplicates(constants) {
 }
 
 function makeExpressionTwo(formula, constants) {
-
+    console.log(formula);
     for (i = 0; i < formula.length + 1; i++) {
         if ((formula.includes("|") || formula.includes("↔") || formula.includes(">") || formula.includes("⊕")) && formula.includes("^")) {
             if (formula.includes("^")) {
@@ -223,12 +232,22 @@ function makeExpressionTwo(formula, constants) {
                     newFormulaArray = formula.splice(index - 1, index + 1);
                     expression = newFormulaArray[1];
                     solve(newFormulaArray, expression, constants);
-                } else if (formula[1] == "^") {
+                } else if (formula[1] == "^" && !(formula[index] == "|")) {
                     newFormulaArray = formula;
                     formula = newFormulaArray.splice(index, index + 1);
                     expression = newFormulaArray[1];
                     solve(newFormulaArray, expression, constants);
+                } else if (formula[1] == "^" && formula[index] == "|" ) {
+                    console.log("hello");
+                    newFormulaArray = formula;
+                    newFormulaArray = formula.splice(index-1, index + 1);
+                    console.log(newFormulaArray);
+                    console.log(formula);
+                    expression = newFormulaArray[1];
+                    console.log(expression);
+                    solve(newFormulaArray, expression, constants);
                 } else {
+                    console.log("hello");
                     newFormulaArray = formula;
                     formula = newFormulaArray.splice(index - 1, index + 1);
                     expression = newFormulaArray[1];
@@ -236,6 +255,7 @@ function makeExpressionTwo(formula, constants) {
                 }
                 continue;
             } else {
+                console.log("hello");
                 newFormulaArray = formula.splice(index - 1, index);
                 solve(newFormulaArray, expression, constants);
                 continue;
@@ -308,6 +328,8 @@ function checkAndReplace(formula) {
             formula[i] = "^";
         } else if (formula[i] == "∨") {
             formula[i] = "|";
+        } else if (formula[i] == "#") {
+            formula[i] = "⊕";
         }
     }
 
